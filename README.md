@@ -8,7 +8,7 @@
 - Raspberry Pi Pico
 - 47 Cherry MX compatible switches
 - 1 Cherry MX compatible stabilizer
-- 47 keycaps
+- 47 keycaps (can be also printed if you want to)
 - 47 1N4148 diodes
 - some wire
 - soldering iron
