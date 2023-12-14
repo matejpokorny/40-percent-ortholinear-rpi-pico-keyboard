@@ -14,7 +14,7 @@
 - soldering iron
 - a lot of patience
 
-*Tip: if you are cheap like me, harvest most of the parts from a cheap second hand mechanical keyboard*
+*Tip: if you are cheap like me, you can harvest most of the parts from a cheap second hand mechanical keyboard*
 
 ## Build
 
