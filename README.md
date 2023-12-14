@@ -7,7 +7,7 @@
 - 3D printer
 - Raspberry Pi Pico
 - 47 Cherry MX compatible switches
-- 1 Cherry MX compatible stabilizer
+- Optional - 1 Cherry MX compatible stabilizer (as the spacebar is only 2U size, it is not neccesary to have a stabilizer there)
 - 47 keycaps (can be also printed if you want to)
 - 47 1N4148 diodes
 - some wire
