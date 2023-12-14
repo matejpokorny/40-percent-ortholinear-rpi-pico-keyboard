@@ -23,3 +23,5 @@
 ![base_plate](./images/base_plate.jpg)
 
 2. Assemble all the switches and stabilizer to the base plate
+
+*I had to modify the base plate with a knife and hot glue the stabilizers, I pushed an updated version of the model to this repo, so hopefully you will have an easier time assembling it.*
