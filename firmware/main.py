@@ -1,13 +1,12 @@
 from machine import Pin
 from time import sleep
 
-led = Pin(14, Pin.OUT)
-push_button = Pin(13, Pin.IN)
+push_button = Pin(15, Pin.IN) # pin 20 on pico, GPIO 15
 
 while True:
     logic_level = push_button.value()
     if logic_level == True:
-        led.value(1)
+        print("Button pressed")
     else:
-        led.value(0)
+        pass
     sleep(0.1)
