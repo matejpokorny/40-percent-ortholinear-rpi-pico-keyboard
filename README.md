@@ -22,8 +22,4 @@
 
 ![base_plate](./images/base_plate.jpg)
 
-2. Assemble stabilizer for the spacebar
-
-![stabilizer](./images/stabilizer.jpg)
-
-3. Assemble the switches
+2. Assemble all the switches and stabilizer to the base plate
