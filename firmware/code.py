@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2021 John Park for Adafruit Industries
-# SPDX-License-Identifier: MIT
-# RaspberryPi Pico RP2040 Mechanical Keyboard
-
 import time
 import board
 from digitalio import DigitalInOut, Direction, Pull
@@ -10,8 +6,6 @@ from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 from adafruit_hid.consumer_control import ConsumerControl
 from adafruit_hid.consumer_control_code import ConsumerControlCode
-
-print("---Pico Pad Keyboard---")
 
 led = DigitalInOut(board.LED)
 led.direction = Direction.OUTPUT
@@ -65,7 +59,7 @@ keymap = {
     (12): (KEY, [Keycode.Y]),
     (13): (KEY, [Keycode.Z]),
 
-    (14): (KEY, [Keycode.I]),
+    (14): (KEY, [Keycode.P]),
     (15): (KEY, [Keycode.O]),
     (16): (KEY, [Keycode.LEFT_ARROW]),
     (17): (KEY, [Keycode.DOWN_ARROW]),
