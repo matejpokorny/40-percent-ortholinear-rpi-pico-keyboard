@@ -24,4 +24,30 @@
 
 2. Assemble all the switches and stabilizer to the base plate
 
+![switches](./images/switches.jpg)
+
 *I had to modify the base plate with a knife and hot glue the stabilizers, I pushed an updated version of the model to this repo, so hopefully you will have an easier time assembling it.*
+
+3. Solder diodes to the switches and connect them in a row as shown in picture below
+
+![diodes](./images/diodes.jpg)
+
+4. Solder wires to the rows of diodes and route them to one place
+
+![wires](./images/wires.jpg)
+
+5. Solder wires to the switches in columns as shown in picture below
+
+![wires](./images/wires2.jpg)
+
+6. Choose your GPIO pins on the pico based on your firmware in `code.py` and solder the wires to the pico
+
+## Flashing the firmware
+
+1. Install circutpython on your pico
+2. Copy the `adafruit_hid` folder to the `lib` folder on pico.
+3. Copy the `code.py` file to the pico.
+
+## Sources
+
+- Firmware is based on this tutorial: https://learn.adafruit.com/diy-pico-mechanical-keyboard-with-fritzing-circuitpython/code-the-pico-keyboard
