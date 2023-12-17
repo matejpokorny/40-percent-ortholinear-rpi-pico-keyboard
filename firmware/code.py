@@ -41,20 +41,25 @@ switch_state = {
 
 
 def press_key(col, button):
+    print(f"Pressed col {col} and row {button} - {keymap_base_layer[button][col][1]}")
     try:
         if keymap_base_layer[button][col][0] == KEY:
-            kbd.press(*keymap_base_layer[button][1])
+            # kbd.press(*keymap_base_layer[button][col][1])
+            pass
         else:
-            cc.send(keymap_base_layer[button][col][1])
+            pass
+           # cc.send(keymap_base_layer[button][col][1])
     except ValueError:  # deals w six key limit
         pass
     switch_state[col][button] = 1
 
 
 def release_key(col, button):
+    print(f"Released col {col} and row {button} - {keymap_base_layer[button][col][1]}")
     try:
         if keymap_base_layer[button][col][0] == KEY:
-            kbd.release(*keymap_base_layer[button][col][1])
+            # kbd.release(*keymap_base_layer[button][col][1])
+            pass
 
     except ValueError:
         pass
@@ -66,7 +71,7 @@ while True:
     for col in range(len(col_pins)):
         output_cols[col].value = True
         # wait for output to settle
-        time.sleep(0.01)
+        time.sleep(0.1)
 
         # read buttons in column
         for button in range(len(row_pins)):
