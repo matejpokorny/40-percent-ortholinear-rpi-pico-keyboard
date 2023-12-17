@@ -1,106 +1,82 @@
 import time
-import board
 from digitalio import DigitalInOut, Direction, Pull
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keycode import Keycode
 from adafruit_hid.consumer_control import ConsumerControl
-from adafruit_hid.consumer_control_code import ConsumerControlCode
 
-led = DigitalInOut(board.LED)
-led.direction = Direction.OUTPUT
-led.value = True
+from keymaps import keymap, keymap_base_layer, KEY, MEDIA, INTERNAL
+from pins import row_pins, col_pins
 
 kbd = Keyboard(usb_hid.devices)
 cc = ConsumerControl(usb_hid.devices)
 
-# list of pins to use (skipping GP15 on Pico because it's funky)
-pins = (
-    board.GP0,
-    board.GP1,
-    board.GP2,
-    board.GP3,
-    board.GP4,
-    board.GP5,
-    board.GP6,
-    board.GP7,
-    board.GP8,
-    board.GP9,
-    board.GP10,
-    board.GP11,
-    board.GP12,
-    board.GP13,
-    board.GP14,
-    board.GP16,
-    board.GP17,
-    board.GP18,
-    board.GP19,
-    board.GP20,
-    board.GP21,
-)
+input_rows = []
+for i in range(len(row_pins)):
+    row = DigitalInOut(row_pins[i])
+    row.direction = Direction.INPUT
+    row.pull = Pull.DOWN
+    input_rows.append(row)
 
-MEDIA = 1
-KEY = 2
+output_cols = []
+for i in range(len(col_pins)):
+    col = DigitalInOut(col_pins[i])
+    col.direction = Direction.OUTPUT
+    output_cols.append(col)
 
-keymap = {
-    (0): (KEY, (Keycode.GUI, Keycode.C)),
-    (1): (KEY, (Keycode.GUI, Keycode.V)),
-    (2): (KEY, [Keycode.THREE]),
-    (3): (KEY, [Keycode.FOUR]),
-    (4): (KEY, [Keycode.FIVE]),
-    (5): (MEDIA, ConsumerControlCode.VOLUME_DECREMENT),
-    (6): (MEDIA, ConsumerControlCode.VOLUME_INCREMENT),
 
-    (7): (KEY, [Keycode.R]),
-    (8): (KEY, [Keycode.G]),
-    (9): (KEY, [Keycode.B]),
-    (10): (KEY, [Keycode.UP_ARROW]),
-    (11): (KEY, [Keycode.X]),  # plus key
-    (12): (KEY, [Keycode.Y]),
-    (13): (KEY, [Keycode.Z]),
-
-    (14): (KEY, [Keycode.P]),
-    (15): (KEY, [Keycode.O]),
-    (16): (KEY, [Keycode.LEFT_ARROW]),
-    (17): (KEY, [Keycode.DOWN_ARROW]),
-    (18): (KEY, [Keycode.RIGHT_ARROW]),
-    (19): (KEY, [Keycode.ALT]),
-    (20): (KEY, [Keycode.U]),
-
+switch_state = {
+    0: [0,0,0,0],
+    1: [0,0,0,0],
+    2: [0,0,0,0],
+    3: [0,0,0,0],
+    4: [0,0,0,0],
+    5: [0,0,0,0],
+    6: [0,0,0,0],
+    7: [0,0,0,0],
+    8: [0,0,0,0],
+    9: [0,0,0,0],
+    10: [0,0,0,0],
+    11: [0,0,0,0],
 }
 
-switches = []
-for i in range(len(pins)):
-    switch = DigitalInOut(pins[i])
-    switch.direction = Direction.INPUT
-    switch.pull = Pull.UP
-    switches.append(switch)
+
+def press_key(col, button):
+    try:
+        if keymap[button][0] == KEY:
+            kbd.press(*keymap[button][1])
+        else:
+            cc.send(keymap[button][1])
+    except ValueError:  # deals w six key limit
+        pass
+    switch_state[button] = 1
 
 
-switch_state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+def release_key(col, button):
+    try:
+        if keymap[button][0] == KEY:
+            kbd.release(*keymap[button][1])
+
+    except ValueError:
+        pass
+    switch_state[button] = 0
+
 
 while True:
-    for button in range(21):
-        if switch_state[button] == 0:
-            if not switches[button].value:
-                try:
-                    if keymap[button][0] == KEY:
-                        kbd.press(*keymap[button][1])
-                    else:
-                        cc.send(keymap[button][1])
-                except ValueError:  # deals w six key limit
-                    pass
-                switch_state[button] = 1
+    # activate 1 column at a time
+    for col in range(len(col_pins)):
+        output_cols[col].value = True
+        # wait for output to settle
+        time.sleep(0.01)
 
-        if switch_state[button] == 1:
-            if switches[button].value:
-                try:
-                    if keymap[button][0] == KEY:
-                        kbd.release(*keymap[button][1])
+        # read buttons in column
+        for button in range(len(row_pins)):
+            if switch_state[col][button] == 0:
+                if input_rows[button].value:
+                    press_key(col, button)
 
-                except ValueError:
-                    pass
-                switch_state[button] = 0
+            if switch_state[col][button] == 1:
+                if not input_rows[button].value:
+                    release_key(col, button)
 
-    time.sleep(0.01)  # debounce
-
+        # deactivate column
+        output_cols[col].value = False
