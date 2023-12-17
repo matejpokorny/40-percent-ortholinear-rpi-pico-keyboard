@@ -5,35 +5,9 @@ MEDIA = 1
 KEY = 2
 INTERNAL = 3
 
-keymap = {
-    (0): (KEY, (Keycode.GUI, Keycode.C)),
-    (1): (KEY, (Keycode.GUI, Keycode.V)),
-    (2): (KEY, [Keycode.THREE]),
-    (3): (KEY, [Keycode.FOUR]),
-    (4): (KEY, [Keycode.FIVE]),
-    (5): (MEDIA, ConsumerControlCode.VOLUME_DECREMENT),
-    (6): (MEDIA, ConsumerControlCode.VOLUME_INCREMENT),
-
-    (7): (KEY, [Keycode.R]),
-    (8): (KEY, [Keycode.G]),
-    (9): (KEY, [Keycode.B]),
-    (10): (KEY, [Keycode.UP_ARROW]),
-    (11): (KEY, [Keycode.X]),  # plus key
-    (12): (KEY, [Keycode.Y]),
-    (13): (KEY, [Keycode.Z]),
-
-    (14): (KEY, [Keycode.P]),
-    (15): (KEY, [Keycode.O]),
-    (16): (KEY, [Keycode.LEFT_ARROW]),
-    (17): (KEY, [Keycode.DOWN_ARROW]),
-    (18): (KEY, [Keycode.RIGHT_ARROW]),
-    (19): (KEY, [Keycode.ALT]),
-    (20): (KEY, [Keycode.U]),
-}
-
 keymap_base_layer = {
     0: {
-        0: (KEY, (Keycode.ESC)),
+        0: (KEY, (Keycode.ESCAPE)),
         1: (KEY, (Keycode.Q)),
         2: (KEY, (Keycode.W)),
         3: (KEY, (Keycode.E)),
@@ -71,11 +45,11 @@ keymap_base_layer = {
         7: (KEY, (Keycode.M)),
         8: (KEY, (Keycode.COMMA)),
         9: (KEY, (Keycode.PERIOD)),
-        10: (KEY, (Keycode.SLASH)),
+        10: (KEY, (Keycode.FORWARD_SLASH)),
         11: (KEY, (Keycode.ENTER)),
     },
     3: {
-        0: (KEY, (Keycode.FUNCTION)),
+        0: (INTERNAL, ("Fn")),
         1: (KEY, (Keycode.LEFT_CONTROL)),
         2: (KEY, (Keycode.LEFT_ALT)),
         3: (KEY, (Keycode.COMMAND)),

@@ -4,7 +4,7 @@ import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.consumer_control import ConsumerControl
 
-from keymaps import keymap, keymap_base_layer, KEY, MEDIA, INTERNAL
+from keymaps import keymap_base_layer, KEY, MEDIA, INTERNAL
 from pins import row_pins, col_pins
 
 kbd = Keyboard(usb_hid.devices)
@@ -42,23 +42,23 @@ switch_state = {
 
 def press_key(col, button):
     try:
-        if keymap[button][0] == KEY:
-            kbd.press(*keymap[button][1])
+        if keymap_base_layer[button][col][0] == KEY:
+            kbd.press(*keymap_base_layer[button][1])
         else:
-            cc.send(keymap[button][1])
+            cc.send(keymap_base_layer[button][col][1])
     except ValueError:  # deals w six key limit
         pass
-    switch_state[button] = 1
+    switch_state[col][button] = 1
 
 
 def release_key(col, button):
     try:
-        if keymap[button][0] == KEY:
-            kbd.release(*keymap[button][1])
+        if keymap_base_layer[button][col][0] == KEY:
+            kbd.release(*keymap_base_layer[button][col][1])
 
     except ValueError:
         pass
-    switch_state[button] = 0
+    switch_state[col][button] = 0
 
 
 while True:
