@@ -125,7 +125,20 @@ keymap = [
             10: (NONE, "None", "None"),
             11: (NONE, "None", "None"),
         },
-        3: EMPTY_ROW,
+        3: {
+            0: (LAYER, 3, "Layer 3"),
+            1: (NONE, "None", "None"),
+            2: (NONE, "None", "None"),
+            3: (NONE, "None", "None"),
+            4: (LAYER, 1, "Layer 1"),
+            5: (NONE, "None", "None"),
+            6: (NONE, "None", "None"),
+            7: (LAYER, 2, "Layer 2"),
+            8: (NONE, "None", "None"),
+            9: (NONE, "None", "None"),
+            10: (NONE, "None", "None"),
+            11: (NONE, "None", "None"),
+        }
     },
     # layer 2
     {
@@ -145,13 +158,39 @@ keymap = [
         },
         1: EMPTY_ROW,
         2: EMPTY_ROW,
-        3: EMPTY_ROW,
+        3: {
+            0: (LAYER, 3, "Layer 3"),
+            1: (NONE, "None", "None"),
+            2: (NONE, "None", "None"),
+            3: (NONE, "None", "None"),
+            4: (LAYER, 1, "Layer 1"),
+            5: (NONE, "None", "None"),
+            6: (NONE, "None", "None"),
+            7: (LAYER, 2, "Layer 2"),
+            8: (NONE, "None", "None"),
+            9: (NONE, "None", "None"),
+            10: (NONE, "None", "None"),
+            11: (NONE, "None", "None"),
+        }
     },
     # layer 3
     {
         0: EMPTY_ROW,
         1: EMPTY_ROW,
         2: EMPTY_ROW,
-        3: EMPTY_ROW,
+        3: {
+            0: (LAYER, 3, "Layer 3"),
+            1: (NONE, "None", "None"),
+            2: (NONE, "None", "None"),
+            3: (NONE, "None", "None"),
+            4: (LAYER, 1, "Layer 1"),
+            5: (NONE, "None", "None"),
+            6: (NONE, "None", "None"),
+            7: (LAYER, 2, "Layer 2"),
+            8: (NONE, "None", "None"),
+            9: (NONE, "None", "None"),
+            10: (NONE, "None", "None"),
+            11: (NONE, "None", "None"),
+        }
     },
 ]
