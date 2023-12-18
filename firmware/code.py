@@ -41,6 +41,7 @@ switch_state = {
 active_layer = 0
 
 def press_key(col, button):
+    global active_layer
     print(f"Pressed col {col} and row {button} - {keymap[active_layer][button][col][2]}")
     try:
         if keymap[active_layer][button][col][0] == KEY:
@@ -56,11 +57,11 @@ def press_key(col, button):
 
 
 def release_key(col, button):
+    global active_layer
     print(f"Released col {col} and row {button} - {keymap[active_layer][button][col][2]}")
     try:
         if keymap[active_layer][button][col][0] == KEY:
             kbd.release(keymap[active_layer][button][col][1])
-            pass
         if keymap[active_layer][button][col][0] == LAYER:
             active_layer = 0
             print(f"Switching to layer {active_layer}")
