@@ -40,13 +40,18 @@
 
 ![wires](./images/wires2.jpg)
 
-6. Choose your GPIO pins on the pico based on your firmware in `code.py` and solder the wires to the pico
+6. Choose your GPIO pins on the pico based on your firmware in `pins.py` and solder the wires to the pico
+
+![pico](./images/pico.jpg)
+
+7. Print the case from `parts/case` and carefully put the keyboard and pico inside
 
 ## Flashing the firmware
 
 1. Install circutpython on your pico
 2. Copy the `adafruit_hid` folder to the `lib` folder on pico.
-3. Copy the `code.py` file to the pico.
+3. Modify your keymaps in `keymaps.py`
+4. Copy the `keymaps.py`, `pins.py` and `code.py` files to the pico.
 
 ## Sources
 
