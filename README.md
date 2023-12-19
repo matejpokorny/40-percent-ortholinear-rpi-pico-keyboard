@@ -1,6 +1,6 @@
 # 3D printed 40 percent ortholinear raspberry pi pico based mechanical keyboard
 
-## Features
+![keyboard](./images/keyboard.jpg)
 
 ## You will need
 
@@ -26,7 +26,8 @@
 
 ![switches](./images/switches.jpg)
 
-*I had to modify the base plate with a knife and hot glue the stabilizers, I pushed an updated version of the model to this repo, so hopefully you will have an easier time assembling it.*
+*I had to modify the base plate with a knife and hot glue the stabilizers, I pushed an updated version of the model to this repo, so hopefully you will have an easier time assembling it.
+I did not use the stabilizers in the end, as the 2U spacebar works just fine without them.*
 
 3. Solder diodes to the switches and connect them in a row as shown in picture below
 
@@ -45,6 +46,11 @@
 ![pico](./images/pico.jpg)
 
 7. Print the case from `parts/case` and carefully put the keyboard and pico inside
+
+- I wrapped the pico in electrical tape to prevent short circuits inside the keyboard.
+
+*Currently in its second generation, the case still does not fit correctly, I modified the second prototype with
+side cutters and the case works with zip ties. If I get around to another model and print, I will update this repo.*
 
 ## Flashing the firmware
 
