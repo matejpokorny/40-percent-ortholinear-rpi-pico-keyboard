@@ -58,6 +58,8 @@ side cutters and the case works with zip ties. If I get around to another model 
 2. Copy the `adafruit_hid` folder to the `lib` folder on pico.
 3. Modify your keymaps in `keymaps.py`
 4. Copy the `keymaps.py`, `pins.py` and `code.py` files to the pico.
+5. When you are done testing your firmware, you can copy the file called `boot.py` to your pico to prevent it appearing as
+a usb drive on your pc.
 
 ## Sources
 
