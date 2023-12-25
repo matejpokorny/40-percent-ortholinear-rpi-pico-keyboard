@@ -20,14 +20,15 @@
 
 1. Print the base plate from `parts/base_plate`
 
+*The printed parts are unfisished and do not fit precisely. Consider printind another model - mentioned in section sources - or designing your own. If you have a good model, feel free to file a PR for it.*
+
 ![base_plate](./images/base_plate.jpg)
 
 2. Assemble all the switches and stabilizer to the base plate
 
 ![switches](./images/switches.jpg)
 
-*I had to modify the base plate with a knife and hot glue the stabilizers, I pushed an updated version of the model to this repo, so hopefully you will have an easier time assembling it.
-I did not use the stabilizers in the end, as the 2U spacebar works just fine without them.*
+*I did not use the stabilizers in the end, as the 2U spacebar works just fine without them.*
 
 3. Solder diodes to the switches and connect them in a row as shown in picture below
 
@@ -64,4 +65,4 @@ a usb drive on your pc.
 ## Sources
 
 - Firmware is based on this tutorial: https://learn.adafruit.com/diy-pico-mechanical-keyboard-with-fritzing-circuitpython/code-the-pico-keyboard
-- In a revision I ended up using this model for the keyboard body: https://www.printables.com/model/345568-fortyorty
+- I ended up using this another model for the keyboard body instead the one provided in this repo: https://www.printables.com/model/345568-fortyorty
