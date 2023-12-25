@@ -64,3 +64,4 @@ a usb drive on your pc.
 ## Sources
 
 - Firmware is based on this tutorial: https://learn.adafruit.com/diy-pico-mechanical-keyboard-with-fritzing-circuitpython/code-the-pico-keyboard
+- In a revision I ended up using this model for the keyboard body: https://www.printables.com/model/345568-fortyorty
