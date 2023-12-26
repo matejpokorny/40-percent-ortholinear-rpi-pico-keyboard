@@ -20,7 +20,7 @@
 
 1. Print the base plate from `parts/base_plate`
 
-*The printed parts are unfisished and do not fit precisely. Consider printind another model - mentioned in section sources - or designing your own. If you have a good model, feel free to file a PR for it.*
+*The printed parts are unfinished and do not fit precisely. Consider printing another model - mentioned in section sources - or designing your own. If you have a good model, feel free to file a PR for it. The photos in this manual are from the first iteration of prints.*
 
 ![base_plate](./images/base_plate.jpg)
 
