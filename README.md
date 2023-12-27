@@ -6,10 +6,9 @@
 
 - 3D printer
 - Raspberry Pi Pico
-- 47 Cherry MX compatible switches
-- Optional - 1 Cherry MX compatible stabilizer (as the spacebar is only 2U size, it is not neccesary to have a stabilizer there)
-- 47 keycaps (can be also printed if you want to)
-- 47 1N4148 diodes
+- 40 Cherry MX compatible switches
+- 40 keycaps (can be also printed if you want to)
+- 40 1N4148 diodes
 - some wire
 - soldering iron
 - a lot of patience
@@ -18,9 +17,10 @@
 
 ## Build
 
-1. Print the base plate from `parts/base_plate`
+1. Print the case from  `https://www.printables.com/model/345568-fortyorty`
 
-*The printed parts are unfinished and do not fit precisely. Consider printing another model - mentioned in section sources - or designing your own. If you have a good model, feel free to file a PR for it. The photos in this manual are from the first iteration of prints.*
+*The printed parts in the photos are unfinished prototype later replaced with the model mentioned above.
+If you make a good 3d model for this keyboard, feel free to file a PR for it.*
 
 ![base_plate](./images/base_plate.jpg)
 
@@ -30,7 +30,9 @@
 
 *I did not use the stabilizers in the end, as the 2U spacebar works just fine without them.*
 
-3. Solder diodes to the switches and connect them in a row as shown in picture below
+3. Solder diodes to the switches and connect them in a row as shown in picture below.
+
+- You can also use another wire to connect the diodes in a row instead of connecting them directly.
 
 ![diodes](./images/diodes.jpg)
 
@@ -46,12 +48,9 @@
 
 ![pico](./images/pico.jpg)
 
-7. Print the case from `parts/case` and carefully put the keyboard and pico inside
+7. Carefully put the pico inside the keyboard.
 
 - I wrapped the pico in electrical tape to prevent short circuits inside the keyboard.
-
-*Currently in its second generation, the case still does not fit correctly, I modified the second prototype with
-side cutters and the case works with zip ties. If I get around to another model and print, I will update this repo.*
 
 ## Flashing the firmware
 
@@ -65,4 +64,4 @@ a usb drive on your pc.
 ## Sources
 
 - Firmware is based on this tutorial: https://learn.adafruit.com/diy-pico-mechanical-keyboard-with-fritzing-circuitpython/code-the-pico-keyboard
-- I ended up using this another model for the keyboard body instead the one provided in this repo: https://www.printables.com/model/345568-fortyorty
+- I ended up using this model for the keyboard body instead creating my own: https://www.printables.com/model/345568-fortyorty
