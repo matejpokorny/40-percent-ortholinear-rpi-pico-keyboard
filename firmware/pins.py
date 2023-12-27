@@ -18,6 +18,4 @@ col_pins = (
     board.GP11,  # Col 8
     board.GP12,  # Col 9
     board.GP13,  # Col 10
-    board.GP14,  # Col 11
-    board.GP16,  # Col 12
 )
