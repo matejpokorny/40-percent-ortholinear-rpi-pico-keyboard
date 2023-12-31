@@ -1,6 +1,33 @@
 # 3D printed 40 percent ortholinear raspberry pi pico based mechanical keyboard
 
+This is a 3D printed 40 percent ortholinear mechanical keyboard powered by Raspberry pi pico. The repository contains
+the firmware and tutorial on how to build the keyboard.
+
+If you want to read more about the build, you can find the articles on my blog:
+
+- [Building a custom mechanical keyboard](https://blog.matejpokorny.cz/page/2023-12-20_building-a-custom-mechanical-keyboard/)
+- [Another custom mechanical keyboard](https://blog.matejpokorny.cz/page/2023-12-31_another-custom-mechanical-keyboard/)
+
 ![keyboard](./images/keyboard.jpg)
+
+*\* When the heat inserted threaded inserts arrive, the zip ties will be replaced with screws.*
+
+## The keymaps
+
+The firmware currently contains 3 layers - the default layer, a control layer
+and a symbol layer.
+
+### Default layer
+
+![default layer](./images/40-keys-base-layer.png)
+
+### Control layer
+
+![control layer](./images/40-keys-control-layer.png)
+
+### Symbol layer
+
+![symbol layer](./images/40-keys-symbol-layer.png)
 
 ## You will need
 
@@ -19,8 +46,7 @@
 
 1. Print the case from  `https://www.printables.com/model/345568-fortyorty`
 
-*The printed parts in the photos are unfinished prototype later replaced with the model mentioned above.
-If you make a good 3d model for this keyboard, feel free to file a PR for it.*
+*The printed parts in the photos are the unfinished prototype later replaced with the model mentioned above.*
 
 ![base_plate](./images/base_plate.jpg)
 
@@ -52,14 +78,17 @@ If you make a good 3d model for this keyboard, feel free to file a PR for it.*
 
 - I wrapped the pico in electrical tape to prevent short circuits inside the keyboard.
 
+*Currently in its second generation, the case still does not fit correctly, I modified the second prototype with
+side cutters and the case works with zip ties. If I get around to another model and print, I will update this repo.*
+
 ## Flashing the firmware
 
 1. Install circutpython on your pico
 2. Copy the `adafruit_hid` folder to the `lib` folder on pico.
 3. Modify your keymaps in `keymaps.py`
 4. Copy the `keymaps.py`, `pins.py` and `code.py` files to the pico.
-5. When you are done testing your firmware, you can copy the file called `boot.py` to your pico to prevent it appearing as
-a usb drive on your pc.
+5. When you are done testing your firmware, you can copy the file called `boot.py` to your pico to prevent it appearing
+   as a usb drive on your pc.
 
 ## Sources
 
