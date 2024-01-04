@@ -168,9 +168,9 @@ keymap = [
             5: (KEY, Keycode.SPACEBAR, "Space"),
             4: (NONE, 0, "None"),
             3: (LAYER, 2, "Layer 2"),
-            2: (KEY, Keycode.LEFT_ARROW, "Left Arrow"),
-            1: (KEY, Keycode.DOWN_ARROW, "Down Arrow"),
-            0: (KEY, Keycode.RIGHT_ARROW, "Right Arrow"),
+            2: (KEY, Keycode.COMMA, ","),
+            1: (KEY, Keycode.PERIOD, "."),
+            0: (KEY, Keycode.FORWARD_SLASH, "/"),
         }
     },
 ]
